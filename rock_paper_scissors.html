@@ -15,9 +15,18 @@
         const _paper = document.getElementsByClassName('paper-button');
         const _scissors = document.getElementsByClassName('scissors-button');
 
-        function computerChoice(){
-            const randomValue = Math.random()
-            if randomValue >= 0 && randomValue 
+        function getComputerChoice(){
+            const randomValue = Math.random();
+            let computerChoice;
+            if (0 <= randomValue <= 0.3){
+                computerChoice = "rock"; 
+            }
+            else if (0.3 < randomValue <= 0.6){
+                computerChoice = "paper";
+            }
+            else {
+                computerChoice = "scissors";
+            }
         }
 
         _rock.addEventListener('click', ()=>{
