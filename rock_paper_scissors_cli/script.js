@@ -33,5 +33,15 @@ switch (_humanChoice.toLowerCase().trim()){
             alert("You lose");
         }
         break;
-    
+    case "paper":
+        computerChoice =  getComputerChoice();
+        if (computerChoice === "paper"){
+            alert("It's a tie!");
+        }
+        else if (computerChoice === "scissors"){
+            alert("You lose!");
+        }
+        else if (computerChoice === "rock"){
+            alert("You win!");
+        }
 }
