@@ -18,30 +18,50 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-_humanChoice = document.body.addEventListener('onload', getHumanChoice);
-
-switch (_humanChoice.toLowerCase().trim()){
-    case "rock":
-        let computerChoice =  getComputerChoice();
-        if (computerChoice === "rock"){
-            alert("It's a tie!");
-        }
-        else if (computerChoice === "scissors"){
-            alert("You win!");
-        }
-        else if (computerChoice === "paper"){
-            alert("You lose");
-        }
-        break;
-    case "paper":
-        computerChoice =  getComputerChoice();
-        if (computerChoice === "paper"){
-            alert("It's a tie!");
-        }
-        else if (computerChoice === "scissors"){
-            alert("You lose!");
-        }
-        else if (computerChoice === "rock"){
-            alert("You win!");
-        }
+function result(){
+    let _humanChoice = getHumanChoice();
+    switch (_humanChoice.toLowerCase().trim()){
+        case "rock":
+            let computerChoice1 =  getComputerChoice();
+            if (computerChoice1 === "rock"){
+                alert("It's a tie!");
+            }
+            else if (computerChoice1 === "scissors"){
+                alert("You win!");
+            }
+            else if (computerChoice1 === "paper"){
+                alert("You lose");
+            }
+            break;
+    
+        case "paper":
+            let computerChoice2 =  getComputerChoice();
+            if (computerChoice2 === "paper"){
+                alert("It's a tie!");
+            }
+            else if (computerChoice2 === "scissors"){
+                alert("You lose!");
+            }
+            else if (computerChoice2 === "rock"){
+                alert("You win!");
+            }
+            break;
+    
+        case "scissors":
+            let computerChoice3 =  getComputerChoice();
+            if (computerChoice3 === "rock"){
+                alert("You lose!");
+            }
+            else if (computerChoice3 === "scissors"){
+                alert("It's a tie!");
+            }
+            else if (computerChoice3 === "paper"){
+                alert("You win");
+            }
+            break;
+    }
 }
+
+
+document.body.addEventListener('load', result());
+
