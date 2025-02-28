@@ -56,3 +56,18 @@ _scissors.addEventListener('click', ()=>{
         alert("You win");
     }
 });
+
+
+
+
+function getHumanChoice(){
+    let humanChoice = prompt("Choose rock, paper or scissors: ");
+    return humanChoice;
+}
+
+
+let _humanChoice = document.body.addEventListener('onload', getHumanChoice);
+
+function getComputerChoice(){
+    
+}
