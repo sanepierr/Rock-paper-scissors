@@ -56,7 +56,18 @@
             }
         });
 
-        
+        _scissors.addEventListener('click', ()=>{
+            let computerChoice =  getComputerChoice();
+            if (computerChoice === "rock"){
+                alert("You lose!");
+            }
+            else if (computerChoice === "scissors"){
+                alert("It's a tie!");
+            }
+            else if (computerChoice === "paper"){
+                alert("You win");
+            }
+        });
     </script>
 </body>
 </html>
