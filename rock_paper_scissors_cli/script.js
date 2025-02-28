@@ -19,3 +19,19 @@ function getComputerChoice(){
 }
 
 _humanChoice = document.body.addEventListener('onload', getHumanChoice);
+
+switch (_humanChoice.toLowerCase().trim()){
+    case "rock":
+        let computerChoice =  getComputerChoice();
+        if (computerChoice === "rock"){
+            alert("It's a tie!");
+        }
+        else if (computerChoice === "scissors"){
+            alert("You win!");
+        }
+        else if (computerChoice === "paper"){
+            alert("You lose");
+        }
+        break;
+    
+}
