@@ -43,6 +43,19 @@
             }
         });
 
+        _paper.addEventListener('click', ()=>{
+            let computerChoice =  getComputerChoice();
+            if (computerChoice === "paper"){
+                alert("It's a tie!");
+            }
+            else if (computerChoice === "scissors"){
+                alert("You lose!");
+            }
+            else if (computerChoice === "rock"){
+                alert("You win!");
+            }
+        });
+
         
     </script>
 </body>
