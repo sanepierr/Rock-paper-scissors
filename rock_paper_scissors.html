@@ -11,9 +11,9 @@
     <button class="scissors-button">Scissors</button>
 
     <script>
-        const _rock = document.getElementsByClassName('rock-button');
-        const _paper = document.getElementsByClassName('paper-button');
-        const _scissors = document.getElementsByClassName('scissors-button');
+        const _rock = document.getElementsByClassName('rock-button')[0];
+        const _paper = document.getElementsByClassName('paper-button')[0];
+        const _scissors = document.getElementsByClassName('scissors-button')[0];
 
         function getComputerChoice(){
             const randomValue = Math.random();
@@ -41,7 +41,9 @@
             else if (computerChoice === "paper"){
                 alert("You lose");
             }
-        })
+        });
+
+        
     </script>
 </body>
 </html>
