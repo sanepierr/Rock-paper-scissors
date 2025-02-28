@@ -1,7 +1,7 @@
-
-const _rock = document.getElementsByClassName('rock-button')[0];
-const _paper = document.getElementsByClassName('paper-button')[0];
-const _scissors = document.getElementsByClassName('scissors-button')[0];
+function getHumanChoice(){
+    let humanChoice = prompt("Choose rock, paper or scissors: ");
+    return humanChoice;
+}
 
 function getComputerChoice(){
     const randomValue = Math.random();
@@ -18,56 +18,4 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-_rock.addEventListener('click', ()=>{
-    let computerChoice =  getComputerChoice();
-    if (computerChoice === "rock"){
-        alert("It's a tie!");
-    }
-    else if (computerChoice === "scissors"){
-        alert("You win!");
-    }
-    else if (computerChoice === "paper"){
-        alert("You lose");
-    }
-});
-
-_paper.addEventListener('click', ()=>{
-    let computerChoice =  getComputerChoice();
-    if (computerChoice === "paper"){
-        alert("It's a tie!");
-    }
-    else if (computerChoice === "scissors"){
-        alert("You lose!");
-    }
-    else if (computerChoice === "rock"){
-        alert("You win!");
-    }
-});
-
-_scissors.addEventListener('click', ()=>{
-    let computerChoice =  getComputerChoice();
-    if (computerChoice === "rock"){
-        alert("You lose!");
-    }
-    else if (computerChoice === "scissors"){
-        alert("It's a tie!");
-    }
-    else if (computerChoice === "paper"){
-        alert("You win");
-    }
-});
-
-
-
-
-function getHumanChoice(){
-    let humanChoice = prompt("Choose rock, paper or scissors: ");
-    return humanChoice;
-}
-
-
-let _humanChoice = document.body.addEventListener('onload', getHumanChoice);
-
-function getComputerChoice(){
-    
-}
+_humanChoice = document.body.addEventListener('onload', getHumanChoice);
