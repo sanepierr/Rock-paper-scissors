@@ -27,10 +27,20 @@
             else {
                 computerChoice = "scissors";
             }
+            return computerChoice;
         }
 
         _rock.addEventListener('click', ()=>{
-
+            let computerChoice =  getComputerChoice();
+            if (computerChoice === "rock"){
+                alert("It's a tie!");
+            }
+            else if (computerChoice === "scissors"){
+                alert("You win!");
+            }
+            else if (computerChoice === "paper"){
+                alert("You lose");
+            }
         })
     </script>
 </body>
