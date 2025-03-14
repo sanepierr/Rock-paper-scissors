@@ -75,10 +75,7 @@ function playGame(){
         }
     }
 
-    for(let i = 0; i < 5; i++){
-        playRound();
-    }
-    alert(`player score: ${humanScore}\ncomputer score: ${computerScore}`);
+    playRound();
 }
 
 
