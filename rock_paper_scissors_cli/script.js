@@ -1,8 +1,6 @@
-
-function getHumanChoice(){
-    let humanChoice = prompt("Choose rock, paper or scissors: ");
-    return humanChoice;
-}
+const _rock = document.getElementsByClassName('rock-button')[0];
+const _paper = document.getElementsByClassName('paper-button')[0];
+const _scissors = document.getElementsByClassName('scissors-button')[0];
 
 function getComputerChoice(){
     const randomValue = Math.random();
@@ -19,67 +17,41 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-
-function playGame(){
-
-    let humanScore = 0;
-    let computerScore = 0;
-
-    function playRound(){
-        let _humanChoice = getHumanChoice();
-        switch (_humanChoice.toLowerCase().trim()){
-            case "rock":
-                let computerChoice1 =  getComputerChoice();
-                if (computerChoice1 === "rock"){
-                    alert("It's a tie!");
-                }
-                else if (computerChoice1 === "scissors"){
-                    humanScore += 1;
-                    alert("You win!");
-                }
-                else if (computerChoice1 === "paper"){
-                    ++computerScore;
-                    alert("You lose");
-                }
-                break;
-        
-            case "paper":
-                let computerChoice2 =  getComputerChoice();
-                if (computerChoice2 === "paper"){
-                    alert("It's a tie!");
-                }
-                else if (computerChoice2 === "scissors"){
-                    ++computerScore;
-                    alert("You lose!");
-                }
-                else if (computerChoice2 === "rock"){
-                    ++humanScore;
-                    alert("You win!");
-                }
-                break;
-        
-            case "scissors":
-                let computerChoice3 =  getComputerChoice();
-                if (computerChoice3 === "rock"){
-                    ++computerScore;
-                    alert("You lose!");
-                }
-                else if (computerChoice3 === "scissors"){
-                    alert("It's a tie!");
-                }
-                else if (computerChoice3 === "paper"){
-                    ++humanScore;
-                    alert("You win");
-                }
-                break;
-        }
+_rock.addEventListener('click', ()=>{
+    let computerChoice =  getComputerChoice();
+    if (computerChoice === "rock"){
+        alert("It's a tie!");
     }
+    else if (computerChoice === "scissors"){
+        alert("You win!");
+    }
+    else if (computerChoice === "paper"){
+        alert("You lose");
+    }
+});
 
-    playRound();
-}
+_paper.addEventListener('click', ()=>{
+    let computerChoice =  getComputerChoice();
+    if (computerChoice === "paper"){
+        alert("It's a tie!");a
+    }
+    else if (computerChoice === "scissors"){
+        alert("You lose!");
+    }
+    else if (computerChoice === "rock"){
+        alert("You win!");
+    }
+});
 
-
-
-
-document.body.addEventListener('load', playGame());
-
+_scissors.addEventListener('click', ()=>{
+    let computerChoice =  getComputerChoice();
+    if (computerChoice === "rock"){
+        alert("You lose!");
+    }
+    else if (computerChoice === "scissors"){
+        alert("It's a tie!");
+    }
+    else if (computerChoice === "paper"){
+        alert("You win");
+    }
+});
