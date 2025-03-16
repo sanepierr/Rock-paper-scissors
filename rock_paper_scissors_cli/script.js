@@ -38,8 +38,8 @@ function playRound(humanChoice){
                 ++computerScore;
                 alert("You lose");
             }
-            AiScore.textContent = 'Computer score: ${computerScore}';
-            playerScore.textContent = "Player score: ${humanScore}";
+            AiScore.textContent = `Computer score: ${computerScore}`;
+            playerScore.textContent = `Player score: ${humanScore}`;
             break;
     
         case "paper":
@@ -55,8 +55,8 @@ function playRound(humanChoice){
                 ++humanScore;
                 alert("You win!");
             }
-            AiScore.textContent = 'Computer score: ${computerScore}';
-            playerScore.textContent = "Player score: ${humanScore}";
+            AiScore.textContent = `Computer score: ${computerScore}`;
+            playerScore.textContent = `Player score: ${humanScore}`;
             break;
     
         case "scissors":
@@ -72,15 +72,9 @@ function playRound(humanChoice){
                 ++humanScore;
                 alert("You win");
             }
-            AiScore.textContent = "Computer score: ${computerScore}";
-            playerScore.textContent = "Player score: ${humanScore}";
+            AiScore.textContent = `Computer score: ${computerScore}`;
+            playerScore.textContent = `Player score: ${humanScore}`;
             break;
-    }
-    if (humanScore === 5){
-        alert('You have won the game');
-    }
-    else {
-        alert('You have lost the game');
     }
 }
     rock.addEventListener("click", ()=>playRound("rock"));
