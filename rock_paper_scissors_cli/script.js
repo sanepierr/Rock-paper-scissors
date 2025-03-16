@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const scissors = document.getElementsByClassName("scissors")[0];
     const hScore =  document.getElementsByClassName("playerScore")[0];
     const cScore =  document.getElementsByClassName("computerScore")[0];
+    const results = document.querySelector(".results")
 
     let humanScore = 0;
     let computerScore = 0;
@@ -23,6 +24,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
         return computerChoice;
     }
+    function score(){
+        const score = document.createElement("div");
+        score.classList.add("score");
+        results.appendChild(score);
+
+        if (computerScore === 5){
+            score.textContent = "You lose!!"
+            computerScore = 0;
+            humanScore = 0;
+        } 
+        if (humanScore === 5){
+            score.textContent = "You win!!"
+            computerScore = 0;
+            humanScore = 0;
+        }
+        cScore.textContent = `Computer score: ${computerScore}`;
+        hScore.textContent = `Player score: ${humanScore}`;
+    }
 
 
     function playRound(humanChoice){
@@ -30,8 +49,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             case "rock":
                 let computerChoice1 =  getComputerChoice();
                 if (computerChoice1 === "rock"){
-                    cScore.textContent = `Computer score: ${computerScore}`;
-                    hScore.textContent = `Player score: ${humanScore}`;
+
                 }
                 else if (computerChoice1 === "scissors"){
                     ++humanScore;
@@ -40,8 +58,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 }
                 else if (computerChoice1 === "paper"){
                     ++computerScore;
-                    cScore.textContent = `Computer score: ${computerScore}`;
-                    hScore.textContent = `Player score: ${humanScore}`;
+                    score();
                 }
 
                 break;
@@ -49,8 +66,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             case "paper":
                 let computerChoice2 =  getComputerChoice();
                 if (computerChoice2 === "paper"){
-                    cScore.textContent = `Computer score: ${computerScore}`;
-                    hScore.textContent = `Player score: ${humanScore}`;
+                    score();
                 }
                 else if (computerChoice2 === "scissors"){
                     ++computerScore;
@@ -59,8 +75,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 }
                 else if (computerChoice2 === "rock"){
                     ++humanScore;
-                    cScore.textContent = `Computer score: ${computerScore}`;
-                    hScore.textContent = `Player score: ${humanScore}`;
+                    score();
                 }
                 break;
         
@@ -68,17 +83,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 let computerChoice3 =  getComputerChoice();
                 if (computerChoice3 === "rock"){
                     ++computerScore;
-                    cScore.textContent = `Computer score: ${computerScore}`;
-                    hScore.textContent = `Player score: ${humanScore}`;
+                    score();
                 }
                 else if (computerChoice3 === "scissors"){
-                    cScore.textContent = `Computer score: ${computerScore}`;
-                    hScore.textContent = `Player score: ${humanScore}`;
+                    score();
                 }
                 else if (computerChoice3 === "paper"){
                     ++humanScore;
-                    cScore.textContent = `Computer score: ${computerScore}`;
-                    hScore.textContent = `Player score: ${humanScore}`;
+                    score();
                 }
                 break;
         }
